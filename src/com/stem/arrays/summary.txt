@@ -1,0 +1,34 @@
+数组
+
+对数据的基本看法：
+创建并组装它们，通过使用整型索引值访问他们的元素，并且他们的尺寸不能改变
+
+数组是简单的线性序列，使得访问元素的速度特别快，但是以固定数组长度为代价的。并且在其生命周期长度不能改变
+
+对象数组和基本类型数组的区别：
+对象数组保存的是引用
+基本类型数组直接保存的是基本类型的值
+
+多维数组是使用｛｝将每个向量分开的, 多维数组常用方法：Arrays.deepToString(a)
+多维数组也可以先定义最外层数组的长度，然后遍历赋值内层数组的长度
+什么时粗糙数组？
+
+Arrays常用方法总结：
+1. Arrays.deepToString() 对基本类型的数组和对象数组都起作用
+2. Arrays.fill()
+3. Arrays.deepEquals() 用于比较多维数组是否相等
+4. Arrays.equals() 针对基本数据类型和Object都做了重载 ，分两步比较：1.元素个数2.对应位置上的元素内容
+5. Arrays.asList()
+6. Arrays.hashCode()
+7.System.arraycopy() 复制操作比for循环复制要快得多  可以拷贝基本类型数组和对象数组 ，复制
+对象数组的时候，复制的是对象的引用，而不是拷贝对象的本身。这个方法不会执行装箱和拆箱，两个数组
+必须要有相同的确切类型
+8. Arrays.sort(arrs,String.CASE_INSENSITIVE_ORDER)  一般的排序是大写字母在前
+9. Arrays.binarySearch() 二分查找法-
+
+Collections.reverseOrder() 可以长生一个Comparator
+对象类文件实现了Comparable接口
+
+数据生成器：CountingGenerator 策略模式
+
+
