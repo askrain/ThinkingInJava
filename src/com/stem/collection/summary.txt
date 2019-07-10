@@ -1,0 +1,94 @@
+集合类：
+包含List、Set、Queue、Map，其中前三个实现了Collection接口，他们本身还是接口。而map可以生成Collection
+
+Set每个值只保存一个对象。Map是可以将两个对象关联起来的关联数组。
+
+泛型和类型安全的容器：
+1.编译期检查放到容器中的对象类型
+2.当不需要使用索引的时候，也可以使用foreach
+
+Object默认的toString()方法：
+GrannySmith@5c647e05
+Gala@33909752
+Fuji@55f96302
+Braeburn@3d4eac69
+
+打印类名+对象散列码的无符号16进制
+
+Collection 一个独立的元素序列，所有元素都服从一条或者多条规则 。List按照插入顺序保存序列，Set不能有重复的
+元素。Queue按照排队规则来确定对象产生的顺序（通常与插入的顺序一致） Collection都可以使用foreach遍历
+
+Map 一组成对的键值对对象，可以使用key对象找到value对象
+
+Collection在创建的时候经常会使用向上转型的方案，即转型为对应的接口，这样在需要做修改的时候就会非常方便。
+但是也会存在问题
+LinkedList包含在List接口中未包含的额外方法
+TreeMap 也包含在Map接口中未包含的方法
+所以，当使用这些接口方法的时候，不能向上转型
+
+addAll的不同使用问题：
+
+Collection的构造器可以接受另一个Collection，用它来进行初始化，可以使用Arrays.asList()来接受一个数组或者用逗号分隔的、
+元素列表（可变参数），将其转换为List。但是这个方法有一个问题就是：
+这种数组转化为集合的操作当时，其底层表示还是数组，因此不能调整尺寸，当使用add或者remove的时候，因为操作本身会改变数组尺寸，会报
+Unsupported Operation。
+另外，Collections的addAll()方法更加灵活，向Arrays.asList()一样，都可以接受可变参数列表
+另外Arrays.asList()还有另外一个问题：
+类型转换：当一个list规定的保存类型为父类的时候，使用asList来初始化元素可能会遇到编译错误，因为这个方法默认
+不能很好的做类型方面的向下校验
+Collections的addAll()方法可以解决这个问题，或者可以在Arrays.<和List一样的类型>asList()来解决这个问题
+
+容器的添加作用；
+使用容器自带的toString()来打印容器中的元素：
+Collection中的元素都用[]来包裹起来。Map中的元素则使用{}包裹起来
+
+fill()可以用到所有的Collection中
+
+ArrayList和LinkedList都是List类型，区别在于执行某些操作时的性能问题。另外LinkedList包含的操作也多余ArrayList
+
+Set
+HashSet采用复杂的方式存储元素，因此时最快的获取元素的方式
+TreeSet 按照比较结果的升序来保存对象
+LinkedHashSet  按照被添加的顺序保存对象
+
+Map 键和值的保存顺序并不是他们的插入顺序，
+像HashSet一样，HashMap实现以一种比较快的算法来控制顺序，因此查找速度最快
+TreeMap按照比较结果升序保存键值
+LinkedHashMap 按照插入顺序保存键值，且保留了HashMap的查找速度
+
+
+
+
+
+-----------------------------------------------------------------------------------
+[List]
+
+ArrayList 查找元素的速度比LinkedList更快。LinkedList的插入和删除速度比ArrayList快
+
+
+当确定一个元素是否属于某个list，发现某个元素的索引，以及从某个list中移除一个元素时，都会用到equals()
+所以必须意识到 List的行为是根据equals()的行为而发生变化的
+
+subList()
+containsAll()和顺序没有什么关系
+Collections.shuffle()
+Collections.sort()
+
+retainAll()是求交集的操作，也是依赖于equals()的操作
+removeAll()
+set() 常用replace()替代，用来消除歧义
+addAll()可以设置插入的位置
+isEmpty()
+clear()
+toArray(length)  必须传入指定的类型，要不然会转换为Object类型的数组
+
+----------------------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------------------
+[迭代器]
+
+迭代器统一了对容器的访问方式
+
