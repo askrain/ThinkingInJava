@@ -1,5 +1,10 @@
 package com.stem.node;
 
+
+/**
+ * 手写链表的关键就是 递归
+ * manager拥有和node一样的方法
+ */
 public class NodeManager{
 
     private Node root;//根节点
