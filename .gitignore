@@ -28,4 +28,5 @@ hs_err_pid*
 .idea/
 ThinkingInJava.iml
 out/
+
 /out/production/ThinkingInJava/com/stem/arrays/summary.txt
