@@ -1,0 +1,41 @@
+Collections工具类总结：
+
+是针对Collection、map的操作做的封装，分为四类，都是静态方法
+
+1.排序
+
+reverse
+shuttle
+sort
+sort
+swap
+rotate  右移
+
+
+2.查找替换
+
+binarySearch
+max
+min
+fill
+frequency（这个太有用了我） 、
+replaceAll
+
+
+
+3.同步控制
+
+sync开头
+使用迭代方法遍历集合时，需要手工同步
+
+4.设置不可变集合
+
+empty...
+singleton...
+unmodifi....
+
+
+其他
+disjoint  连个集合没有交集返回true
+addAll
+reverseOrder  返回Comparator
